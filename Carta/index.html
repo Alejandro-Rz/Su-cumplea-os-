@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti Preciosa!! ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Georgia, serif;
+    background:#f5f1ea;
+    overflow-x:hidden;
+}
+
+/* Pantalla inicial */
+
+#inicio{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#f8f4ef,#ece3d7);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    padding:30px;
+    text-align:center;
+}
+
+#inicio h1{
+    font-size:2.3rem;
+    color:#7a5c3e;
+    margin-bottom:20px;
+}
+
+#inicio p{
+    color:#666;
+    font-size:1.1rem;
+    margin-bottom:40px;
+}
+
+#abrir{
+    padding:18px 35px;
+    border:none;
+    border-radius:50px;
+    background:#b8860b;
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+#abrir:active{
+    transform:scale(.95);
+}
+
+.carta-container{
+    display:none;
+    padding:25px 15px;
+}
+
+.carta{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    padding:35px 25px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    animation:aparecer 1.5s ease;
+}
+
+.fecha{
+    text-align:right;
+    color:#888;
+    margin-bottom:30px;
+    font-size:14px;
+}
+
+h2{
+    text-align:center;
+    color:#b8860b;
+    margin-bottom:30px;
+    font-size:2rem;
+}
+
+p{
+    text-align:justify;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:1.05rem;
+    color:#444;
+}
+
+.firma{
+    text-align:right;
+    margin-top:40px;
+    line-height:1.8;
+}
+
+.nombre{
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:480px){
+
+    #inicio h1{
+        font-size:2rem;
+    }
+
+    .carta{
+        padding:30px 20px;
+    }
+
+    h2{
+        font-size:1.7rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="inicio">
+    <h1>💌 Tienes una carta especial</h1>
+    <p>Presiona el botón para abrirla</p>
+
+    <button id="abrir">
+        Abrir carta ❤️
+    </button>
+</div>
+
+<div class="carta-container" id="carta">
+
+    <div class="carta">
+
+        <div class="fecha">
+            28 de Junio del 2026 🎂
+        </div>
+
+        <h2>Para el amor de mi vida</h2>
+
+        <p>
+            Hoy es un día muy especial, porque celebra el nacimiento de la persona
+            más importante de mi vida. Quiero desearte un muy feliz cumpleaños y
+            agradecerle a la vida por haberme permitido encontrarte.
+        </p>
+
+        <p>
+            Desde aquel 2021 en el que comenzamos esta historia, hemos vivido
+            momentos increíbles juntos, y pensar que este julio cumpliremos ya
+            cinco años de relación me llena de felicidad y emoción.
+        </p>
+
+        <p>
+            Estoy muy orgulloso de todo lo que has logrado y de la increíble mujer
+            en la que te has convertido. Admiro profundamente tu esfuerzo, tu
+            dedicación, tu inteligencia y la fuerza con la que enfrentas cada reto.
+        </p>
+
+        <p>
+            Quiero que nunca olvides que siempre estaré aquí para sostenerte cuando
+            lo necesites, para escucharte, apoyarte y caminar contigo en cada etapa
+            de la vida. Pase lo que pase, siempre podrás contar conmigo.
+        </p>
+
+        <p>
+            Te amo muchísimo y eres la mujer con la que quiero compartir mi vida.
+            Eres el amor de mi vida y no hay un solo día en el que no agradezca
+            tenerte a mi lado.
+        </p>
+
+        <p>
+            Espero que hoy te la pases increíble, que sonrías muchísimo y que seas
+            muy feliz, porque mereces absolutamente todo lo bonito que existe en
+            este mundo.
+        </p>
+
+        <p>
+            Gracias por cada recuerdo, por cada enseñanza y por todo el amor que
+            me has dado durante estos años. Espero seguir celebrando muchísimos
+            cumpleaños más contigo.
+        </p>
+
+        <div class="firma">
+            Con todo mi amor ❤️<br><br>
+            <span class="nombre">Alejandro</span>
+        </div>
+
+    </div>
+
+</div>
+
+<audio id="musica" loop>
+    <source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const boton = document.getElementById("abrir");
+const inicio = document.getElementById("inicio");
+const carta = document.getElementById("carta");
+const musica = document.getElementById("musica");
+
+boton.addEventListener("click", () => {
+
+    musica.play();
+
+    inicio.style.display = "none";
+    carta.style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
